@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <style>
+                #header-a {
+            color: #3f3f3f;
+            font-size: 14px;
+        }
+
+        .h-1 {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .p-1 {
+            margin-top: 20px;
+            color: #005a87;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        i {
+            color: #ccc;
+        }
+
+        .i-1:hover {
+            color: tomato;
+        }
+
+        .i-2:hover {
+            color: yellowgreen;
+        }
+
+        .i-3:hover {
+            color: #005a87;
+        }
+
+        .abc:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        .a-1 {
+            color: black;
+        }
+
+        .a-1:hover {
+            color: white;
+        }
+
+        #nav1 {
+            position: fixed;
+            margin: 0px;
+            z-index: 100;
+            width: 100%;
+            background-color: rgb(255, 253, 253);
+            box-shadow: 1px 1px 1px 1px whitesmoke;
+        }
+
+       
+        #navbar1{
+            background: #333 !important;
+            height: 170px !important;
+        }
+        #navbar1 a{
+            color: white !important;
+        }
+
+        .Acc{
+            color: white !important; 
+            margin-left: 170px;
+            margin-top: 100px;
+        }
+        .my{
+            font-size: 35px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .lost a {
+            color: coral ;
+        }
+        .post{
+            margin-top: 70px;
+            font-size: 13px;
+            text-align: justify;
+        }
+        .post a{
+            color: coral;
+        }
+        .li{
+
+            list-style-type: none;
+            list-style-position: outside;
+        }
+        .la {
+            list-style-type: none;
+            list-style-position: outside;
+            height: 70px;
+        }
+        * {
+        box-sizing:border-box;
+        }
+        .calendar {
+        
+        font-weight: bold;
+        }
+        ul {
+        list-style-type: none;
+        }
+        body {
+        font-family: Verdana,sans-serif;
+        }
+        
+        .month {
+            padding: 70px 25px;
+            width: 100%;
+            background: #CC0000 ;
+        }
+        
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .month ul li {
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+        }
+        
+        .month .next {
+            float: right;
+            padding-top: 10px;
+        }
+        
+        .weekdays {
+            padding: 10px 0;
+            background-color: #ddd;
+        }
+        
+        .weekdays li {
+            display: inline-block;
+            width: 12%;
+            color: #666;
+            text-align: center;
+        }
+        
+        .days {
+            margin: auto;
+            padding: 10px 0;
+            background: #eee;
+            margin: 0;
+        }
+        
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 12%;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size:12px;
+            color: #777;
+        }
+        
+        .days li .active {
+            padding: 5px;
+            color:coral !important
+        }
+         .tags{
+            border: 1px solid #ddd;
+            background: white;
+            padding: 7px;
+            color: black;
+            font-size: 8pt;
+        }
+        .tags:hover{
+            background: coral ;
+            color: white;
+            text-decoration: none ;
+
+        }
+        .anh{
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+             border-bottom-left-radius: 50%;
+             border-bottom-right-radius: 50%;
+             float: left;
+             margin-right: 15px;
+        }
+        .cmt{
+            font-size: 8pt;
+        }
+        
+    </style>
+</head>
+<body style="background:#fafafa">
+    <div>
+        <!--- Navbar --->
+        <nav id="nav1" class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#"><img
+                        src="https://secureservercdn.net/198.71.233.138/d0y.65e.myftpupload.com/wp-content/uploads/2019/08/header-logo.png"
+                        alt="" height="50px" width="170px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse"
+                    aria-controls="nvbCollapse">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nvbCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link " href="#">Company</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#">Solutions</a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#"></i>QT-Community
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#"></i>Forums
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#"></i>Resources
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#"></i>Shop
+                            </a>
+                        </li>
+                        <li class="nav-item pl-1">
+                            <a id="header-a" class="nav-link" href="#"></i>Account
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--# Navbar #-->
+    </div>
+
+       
+            <nav class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light col" id="navbar1">
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                    
+                        <h4 class="Acc">MY ACCOUNT</h4>
+                            <ul class="navbar-nav ml-auto" style="margin-right: 200px;">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link" style=" margin-top: 90px">Home /</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link" style=" margin-top: 90px">My Account </a>
+                                </li>
+                            </ul>
+                    
+                    </div>
+                </nav>
+            </nav>
+        
+
+    <div class="container"> 
+        <div class="row">
+            <article class="col-md-9">
+                <h4 class="my">My Account</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <form name="frmBonus">
+                                    <div class="form-group">
+                                        <label>Username or email address </label>
+                                        <span style="color: orangered">*</span>
+                                        <input type="" name="txtFullname" minlength="10"requied="" ng-model="name"class="form-control"><br>
+                                       
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label>Pasword</label>
+                                        <span style="color: orangered">*</span>
+                                        <input type="password" name="txtSalary" min="2000000.0" ng-model="salary"class="form-control">
+                                       
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                              Remember me
+                                            </label>
+                                          </div>
+                                    </div>
+                                    <button class="btn btn-success" style="background: coral !important; border: 1px solid coral; float: right"type="submit">LOGIN</button>
+                                    <div class="lost">
+                                        <p>
+                                            <a href="#">Lost your password?</a>
+                                        </p>
+                                        <p>
+                                            <a href="#"> Not a member yet? Register now.</a>		
+                                       	</p>						
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+            </article>  
+            <aside class="col-md-3">
+                <div class="mt-5">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                </div>
+                <div class="post">
+                    <h5 style="color: #bbb">RECENT POSTS</h5>
+                    <p class="mt-4 ">
+                        <li class="li"><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li><br>
+                        <li class="li"><a href="#">State of AI in HR</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 4)</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 3)</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 2)</a></li>
+                    </p><br>
+                    <h5 style="color: #bbb">RECENT COMMENTS</h5>
+                    <div class="mt-4 ">
+                       <li class="li"> <a href="#">Carri</a><span style="color:#bbb"> on </span> <a href="#">State of AI in HR</a></li><br>
+                       <li class="li"><span style="color:#bbb">admin1 on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li><br>
+                       <li class="li"><a href="">Justin Hamilton</a><span style="color:#bbb"> on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li></br>
+                        <li class="li"><a href="">Kyle Brown</a><span style="color:#bbb"> on </span><a href="#">Overview of blockchain and bitcoin (Part 3)</a></li><br>
+                        <li class="li"><a href="">AffiliateLabz</a><span style="color:#bbb"> on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li>
+                        </div>
+                   <br>
+                    <h5 style="color: #bbb"> ARCHIVES</h5>
+                    <p class="mt-4 "> <li class="li"><a href="#">February 2020</a></li><br>
+                        <li class="li"><a href="#">September 2019</a></li><br>
+                        <li class="li"><a href="#">August 2019</a></li></br>    
+                    </p><br>
+                    <h5 style="color: #bbb"> CATEGORIES</h5>
+                    <p class="mt-4 "> <li class="li"><a href="#">Uncategorized</a></li><br>
+                        <li class="li"><a href="#">WordPress</a><span style="color:#bbb"> (5) </span></li><br>
+                        <li class="li"><a href="#">August 2019</a><span style="color:#bbb"> (1) </span></li></br>    
+                    </p><br>
+                    <h5 style="color: #bbb">RECENT POSTS</h5>
+                    <p class="mt-4 "> 
+                        <li class="la">
+                            <div style="width: 70px; height: 70; float: left;" class="img">
+                            <img src="img/blog-State-of-AI-in-HR_1-50x50.jpg" style="width: 50px; height: 50; float: left; margin-right: 20px">
+                            </div>
+                            <div style="float:righ; height: 70px;">
+                                <a href="#">State of AI in HR</a><br>
+                                <span style="color:#bbb">February 2020 </span>
+                            </div>
+                        </li><br>
+                        <li class="la">
+                            <div style="width: 70px; height: 70; float: left;" class="img">
+                                <img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-4-50x50.jpg" style="    float: left; margin-right: 20px" width="50px"; height= "50px">
+                            </div>
+                            <div style="float:righ; height: 70px;">
+                            <a href="#">Overview of blockchain and bitcoin (Part 4)</a><br>
+                            <span style="color:#bbb";>September 2019 </span>
+                            </div>
+                        </li><br>
+
+                        <li class="la">
+                            <div style="width: 70px; height: 70; float: left;" class="img">
+                                <img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-4-50x50.jpg" style="    float: left; margin-right: 20px" width="50px"; height= "50px">
+                            </div>
+                            <div style="float:righ; height: 70px;">
+                            <a href="#">Overview of blockchain and bitcoin (Part 3)</a><br>
+                            <span style="color:#bbb";>September 2019 </span>
+                            </div>
+                        </li><br>    
+                    </p><br>
+                    <h5 style="color: #bbb">ABOUT US</h5>
+                    <p class="mt-4 " style="color: #888888">
+                        Converio is a clean and clear multipurpose responsive WordPress theme. With Converio WordPress theme you can build beautiful and modern sites to promote any business or service fast and easily.
+                    </p><br>
+                    <p style="color: #888888"> <a href="">Get Converio </a>WordPress theme now to start building your awesome site.</p><BR>
+                    <h5 style="color: #bbb"> WORKS STREAM</h5>
+                    <div class="mt-4">
+                        <a href="#"><img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-4-78x78.jpg" width="78px"height="78px"></a>
+                        <a href="#"><img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-3-78x78.jpg" width="" height=""></a>
+                        <a href="#"><img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-2-78x78.jpg" width="" height=""></a>
+                        <a href="#"><img src="img/blog-Overview-of-blockchain-and-bitcoin-Part-1-78x78.jpg" width="" height=""></a>
+                    </div>
+                    <div class="mt-4">
+                        <h5 style="color: #bbb"><i class="fab fa-twitter"></i> TWITTER</h5>
+                        <p>
+                            The most conversion optimized WordPress theme in the industry has released. Check out this great #themeforest item: <br>
+                            <a href="http://t.co/AWN0QUm0j4">http://t.co/AWN0QUm0j4</a><br>
+                            <span>6 years ago</span>
+                        </p>
+                        <p>
+                             The Most Customizable Theme Ever Has Released - Check out this great #themeforest item:  <br>
+                            <a href="http://t.co/DdmcRdPHF3">http://t.co/DdmcRdPHF3</a><br>
+                            <span>6 years ago</span>
+                        </p>
+                    </div>
+                    <h5 style="color: #bbb"><i class="fab fa-pinterest"></i> PINTERECT</h5>
+                    <div class="mt-4">
+                        <a href="#"><img src="img/f1c1d2c01d9665c65e73a471a608791e--trendy-website.jpg" width="78px"height="78px"></a>
+                        <a href="#"><img src="img/7a668ee99e436676452148d02803f04d--wordpress-theme.jpg" width="78px" height="78px"></a>
+                        <a href="#"><img src="img/8c41dd80bfc446c4f687aecb67a19941--wordpress-theme-website.jpg" width="78px" height="78px"></a>
+                        <a href="#"><img src="img/6679dcb4afe9c35709fd63032f1b1f18--retina-wordpress-theme.jpg" width="78px" height="78px" style="margin-top:10px;margin-right: 5px;"></a>
+                        <a href="#"><img src="img/b80e556ef0e26ec90e7cb91a386e92a6--website.jpg" width="78px;" height="78px" style="margin-top:10px;margin-right: 5px;"></a>
+                        <a href="#"><img src="img/bff56340b2a4cd0b198e9f3e912deb3f--wordpress-theme.jpg" width="78px" height="78px"style="margin-top:10px;margin-left: 1px;"></a>
+                    </div><br>
+                    <a href="" style="color: black"> FOLLOW OUR PINTEREST BOARDS </a>
+                    <section>
+                    <h5 style="color: #bbb; margin-top: 50px;"><i class="fab fa-pinterest"></i> CALENDAR</h5>
+                    <div class="mt-4">
+                        <div class="calendar">
+                            <p style="color:#666">February 2020</p>
+                            <ul class="weekdays">
+                              <li>M</li>
+                              <li>T</li>
+                              <li>W</li>
+                              <li>T</li>
+                              <li>F</li>
+                              <li>S</li>
+                              <li>S</li>
+                            </ul>
+                           
+                            <ul class="days">  
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                
+                                
+                              <li>1</li>
+                              <li>2</li>
+                              <li>3</li>
+                              <li>4</li>
+                              <li>5</li>
+                              <li>6</li>
+                              <li>7</li>
+                              <li>8</li>
+                              <li>9</li>
+                              <li>10</li>
+                              <li>11</li>
+                              <a href=""></a><li><span class="active">12</span></li>
+                              <li>13</li>
+                              <a href=""><li><span class="active">14</span></li></a>
+                              <li>15</li>
+                              <li>16</li>
+                              <li>17</li>
+                              <li>18</li>
+                              <li>19</li>
+                              <li>20</li>
+                              <li>21</li>
+                              <li>22</li>
+                              <li>23</li>
+                              <li>24</li>
+                              <li>25</li>
+                              <li>26</li>
+                              <li>27</li>
+                              <li>28</li>
+                              <li>29</li>
+                              
+                            </ul>
+                          </div>
+                          <a href="">Sep</a>
+                    </div><br>
+                    </section>
+                    <div>
+                        <h5 style="color:#bbb" class="mb-5 mt-5">SEARCH</h5>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+                        </form> 
+                    </div>
+                    <div>
+                        <h5 style="color:#bbb" class="mb-5 mt-5">SEARCH</h5>
+                        <select name="" id="" class="form-control">
+                            <option value="">Select month</option>
+                            <option value="">February 2020</option>
+                            <option value="">September 2019</option>
+                            <option value="">August 2019</option>
+                        </select>
+                    </div>
+                    <div class="mt-5">
+                        <h5 style="color:#bbb" class="mb-5 mt-5">TAGS</h5>
+                            <a href="" class="tags">Al</a>
+                            <a href="" class="tags">Artificial Intelligence</a>
+                            <a href="" class="tags">HR</a><br>
+                            <div class="mt-3">
+                            <a href="" class="tags">Human Resource</a>
+                            <a href="" class="tags">Machine Learning</a>
+                            </div>
+                    </div>
+                    <div class="mt-5">
+                        <h5 style="color:#bbb; text-align: left" class="mb-5 mt-5">RECRNT COMMENTS DEFAULT</h5>
+                        <li class="li"> <a href="#">Carri</a><span style="color:#bbb"> on </span> <a href="#">State of AI in HR</a></li><br>
+                        <li class="li"><span style="color:#bbb">admin1 on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li><br>
+                        <li class="li"><a href="">Justin Hamilton</a><span style="color:#bbb"> on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li></br>
+                    </div>
+                    <div class="mt-5">
+                        <h5 style="color:#bbb; text-align: left" class="mb-5 mt-5"> RECRNT COMMENTS (CUSTOM)</h5>
+                            <div class="cmt">
+                                <img src="img/c21b029e45e42f9b09a29e8180b6ee40.png" class="anh"width="50px" height="50px"> 
+                                <li class="li"> <span style="color:#bbb">Carri</span> on <a href="#">State of AI in HR</a>
+                                   <p> Hi there! I know this is kinda off topic but...</p>
+                                </li><br>   
+                            </div>
+                            <div class="cmt">
+                                <img src="img/c21b029e45e42f9b09a29e8180b6ee40.png" class="anh"width="50px" height="50px"> 
+                                <li class="li"><span style="color:#bbb">admin1 </span>on <a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a>
+                                   <p>Hi Justin, We use Converio Theme. Wish you a good day!...</p>
+                                </li><br>   
+                            </div>
+                            <div class="cmt"> 
+                                <img src="img/c21b029e45e42f9b09a29e8180b6ee40.png" class="anh"width="50px" height="50px"> 
+                                <li class="li"><span style="color:#bbb">admin1</span> on <a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a>
+                                   <p>Long time reader, first time commenter -- so, thought I'd...</p>
+                                </li><br>   
+                            </div>
+                            
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="card" >
+                      <div class="card-header" id="headingOne" style="background: white">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: black !important; font-size: 10pt; text-decoration:none; font-weight: bold">
+                            Accordion item 
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body"  style="color: #888 !important; font-size: 10pt;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellen tesque diam sem, hendrerit ut faucibus sit amet, bibendum vel lacus. Nunc molestie magna sed sapien ornare tempus. Curabitur venenatis ipsum nec ligula.                         </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo" style="background: white">
+                        <h2 class="mb-0" style="color: black !important; font-size: 12pt;">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style="color: black !important; font-size: 10pt; text-decoration:none; font-weight: bold">
+                            Suspendisse lobortis 
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body" style="color: #888 !important; font-size: 10pt;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellen tesque diam sem, hendrerit ut faucibus sit amet, bibendum vel lacus. Nunc molestie magna sed sapien ornare tempus. Curabitur venenatis ipsum nec ligula.                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree" style="background: white">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  style="color: black !important; font-size: 10pt; text-decoration:none; font-weight: bold">
+                            Donec sed arcu a justo 
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body" style="color: #888 !important; font-size: 10pt;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellen tesque diam sem, hendrerit ut faucibus sit amet, bibendum vel lacus. Nunc molestie magna sed sapien ornare tempus. Curabitur venenatis ipsum nec ligula.                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour" style="background: white">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"  style="color: black !important; font-size: 10pt; text-decoration:none; font-weight: bold">
+                                Accordion item
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                          <div class="card-body" style="color: #888 !important; font-size: 10pt;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellen tesque diam sem, hendrerit ut faucibus sit amet, bibendum vel lacus. Nunc molestie magna sed sapien ornare tempus. Curabitur venenatis ipsum nec ligula.                        </div>
+                        </div>
+                      </div>
+                  </div>
+                    <div class="mt-4">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background: coral">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" style="font-size: 12pt;color:white;background-color: coral "><i class="fas fa-heart"></i>
+                            </a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" style="font-size: 12pt;color:white;background-color: coral"><i class="fas fa-map-marker-alt"></i>Location</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false" style="font-size: 12pt; color:white;background-color: coral">Tabs</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent" style="background: white ;padding: 20px; color: #888; font-size: 10pt;">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellen tesque diam sem, hendrerit ut faucibus sit amet, bibendum vel lacus. Nunc molestie magna sed sapien ornare tempus. Curabitur venenatis ipsum nec ligula.</div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Aliquam erat volutpat. Pellentesque varius varius elit ac consectetur. Nunc varius, diam ut malesuada aliquam, odio ante faucibus erat, nec semper mauris arcu id turpis. Nulla at tincidunt arcu.</div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><p>Sed suscipit, metus ac fermentum condimentum, justo lectus vehicula eros, sed accumsan mi risus ut velit. Donec sollicitudin lacus vitae mauris mattis tempor.</p></div>
+                        </div>
+                    </div>
+            </aside>
+        </div>
+    </div>
+    <footer style="background-color: #333;margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div style="margin-top: 30px;" class="col-lg-3 col-sm-3">
+                    <h5 style="color: rgb(177, 177, 177);font-size: 15px;">CANADA</h5>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">British Columbia Office</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Phone: +1 306 491 8799</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">E-mail:
+                            info.canada@qntdata.com</span><br>
+                    </p>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">British Columbia Office</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Phone: +1 306 491 8799</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">E-mail:
+                            info.canada@qntdata.com</span><br>
+                    </p>
+                    <h5 style="color: rgb(177, 177, 177);font-size: 15px;">US</h5>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">US Office</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Phone: +1 858 258 3151</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">E-mail: info.us@qntdata.com</span><br>
+                    </p>
+                </div>
+                <div style="margin-top: 30px;" class="col-lg-3 col-sm-3">
+                    <h5 style="color: rgb(177, 177, 177);font-size: 15px;">VIETNAM</h5>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Ho Chi Minh Office </span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Phone: +84 904 917 075</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">E-mail:
+                            info.vietnam@qntdata.com</span><br>
+                    </p>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Da Nang Office </span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">Phone: +84 904 917 075</span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">E-mail:
+                            info.danang@qntdata.com</span><br>
+                    </p>
+                </div>
+                <div style="margin-top: 30px;" class="col-lg-3 col-sm-3">
+                    <h5 style="color: rgb(177, 177, 177);font-size: 15px;">QUICK LINKS</h5>
+                    <p>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;"><a href="">About Us</a></span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;"><a href="">Our Team</a></span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;"><a href="">Careers</a></span><br>
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;"><a href="">Partnerships</a></span><br>
+                    </p>
+
+                </div>
+                <div style="margin-top: 30px;" class="col-lg-3 col-sm-3">
+                    <h5 style="color: rgb(177, 177, 177);font-size: 15px;">QUICK LINKS</h5>
+                    <div style="float: left;margin-top: 20px;width: 100%;">
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">
+                            <img style="float: left;width: 50px;"
+                                src="https://secureservercdn.net/198.71.233.138/d0y.65e.myftpupload.com/wp-content/uploads/2020/02/blog-State-of-AI-in-HR_1-78x78.jpg"
+                                alt="">
+                            <a style="margin-left: 10px;text-decoration: none;font-size: 14px; color: #ccc;"
+                                href="">State of AI in HR</a><br>
+                            <span style="font-size: 10px; margin-left: 10px;">February 12, 2020</span>
+                        </span>
+                    </div>
+                    <div style="float: left;margin-top: 20px;width: 100%;">
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">
+                            <img style="float: left;width: 50px;"
+                                src="https://secureservercdn.net/198.71.233.138/d0y.65e.myftpupload.com/wp-content/uploads/2019/09/blog-Overview-of-blockchain-and-bitcoin-Part-4-78x78.jpg"
+                                alt="">
+                            <a style="margin-left: 10px;text-decoration: none;font-size: 14px; color: #ccc;"
+                                href="">State of AI in HR</a><br>
+                            <span style="font-size: 10px; margin-left: 10px;">February 12, 2020</span>
+                        </span>
+                    </div>
+                    <div style="float: left;margin-top: 20px;width: 100%;">
+                        <span style="color: rgb(168, 168, 168);font-size: 13px;">
+                            <img style="float: left;width: 50px;"
+                                src="https://secureservercdn.net/198.71.233.138/d0y.65e.myftpupload.com/wp-content/uploads/2019/09/blog-Overview-of-blockchain-and-bitcoin-Part-3-78x78.jpg"
+                                alt="">
+                            <a style="margin-left: 10px;text-decoration: none;font-size: 14px; color: #ccc;"
+                                href="">State of AI in HR</a><br>
+                            <span style="font-size: 10px; margin-left: 10px;">February 12, 2020</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 20px;border-top: 1px solid white;" class="row">
+                <div style="margin-top: 20px;margin-bottom: 10px;">
+                    <img src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_d_m.gif" alt="">
+                    <span style="color: rgb(168, 168, 168);font-size: 13px;">Copyright © 2020 QT-Data Inc. Canada. All
+                        rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        
+          
+        
+              
+</body>
+</html>

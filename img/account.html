@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <style>
+       
+        .navbar{
+            background: #333 !important;
+            height: 90px !important;
+        }
+        .navbar a{
+            color: white !important;
+        }
+        .navbar .navbar-nav{
+            margin-right: 200px;
+        }
+        .Acc{
+            color: white !important; 
+            margin-left: 170px;
+        }
+        .my{
+            font-size: 35px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .lost a {
+            color: coral ;
+        }
+        .post{
+            margin-top: 70px;
+            font-size: 13px;
+            text-align: justify;
+        }
+        .post a{
+            color: coral;
+        }
+        .li{
+            list-style-type: none;
+            list-style-position: outside;
+
+        }
+    </style>
+</head>
+<body style="background:#fafafa">
+    <nav class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col" >
+             
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+               
+                <h4 class="Acc">MY ACCOUNT</h4>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Home /</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">My Account </a>
+                        </li>
+                    </ul>
+            
+            </div>
+        </nav>
+    </nav>
+
+
+ 
+    <div class="container"> 
+        <div class="row">
+            <article class="col-md-9">
+                <h4 class="my">My Account</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                <form name="frmBonus">
+                                    <div class="form-group">
+                                        <label>Username or email address </label>
+                                        <span style="color: orangered">*</span>
+                                        <input type="" name="txtFullname" minlength="10"requied="" ng-model="name"class="form-control"><br>
+                                       
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label>Pasword</label>
+                                        <span style="color: orangered">*</span>
+                                        <input type="password" name="txtSalary" min="2000000.0" ng-model="salary"class="form-control">
+                                       
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                              Remember me
+                                            </label>
+                                          </div>
+                                    </div>
+                                    <button class="btn btn-success" style="background: coral !important; border: 1px solid coral; float: right"type="submit">LOGIN</button>
+                                    <div class="lost">
+                                        <p>
+                                            <a href="#">Lost your password?</a>
+                                        </p>
+                                        <p>
+                                            <a href="#"> Not a member yet? Register now.</a>		
+                                       	</p>						
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+            </article>
+            <aside class="col-md-3">
+                <div class="mt-5">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                </div>
+                <div class="post">
+                    <h5 style="color: #bbb">RECENT POSTS</h5>
+                    <p class="mt-4 ">
+                        <li class="li"><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li><br>
+                        <li class="li"><a href="#">State of AI in HR</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 4)</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 3)</a></li><br>
+                        <li class="li"><a href="#">Overview of blockchain and bitcoin (Part 2)</a></li>
+                    </p><br>
+                    <h5 style="color: #bbb">RECENT COMMENTS</h5>
+                    <p class="mt-4 ">
+                       <li class="li"> <a href="#">Carri</a><span style="color:#bbb"> on </span> <a href="#">State of AI in HR</a></li><br>
+                       <li class="li"><span style="color:#bbb">admin1 on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li><br>
+                       <li class="li"><a href="">Justin Hamilton</a><span style="color:#bbb"> on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li></br>
+                        <li class="li"><a href="">Kyle Brown</a><span style="color:#bbb"> on </span><a href="#">Overview of blockchain and bitcoin (Part 3)</a></li><br>
+                        <li class="li"><a href="">AffiliateLabz</a><span style="color:#bbb"> on </span><a href="#">Trí tuệ nhân tạo trong quản trị nguồn nhân lực</a></li>
+                        </p>
+                   <br>
+                    <h5 style="color: #bbb"> ARCHIVES</h5>
+                    <p class="mt-4 "> <li class="li"><a href="#">February 2020</a></li><br>
+                        <li class="li"><a href="#">September 2019</a></li><br>
+                        <li class="li"><a href="#">August 2019</a></li></br>    
+                    </p><br>
+                    <h5 style="color: #bbb"> CATEGORIES</h5>
+                    <p class="mt-4 "> <li class="li"><a href="#">Uncategorized</a></li><br>
+                        <li class="li"><a href="#">WordPress</a><span style="color:#bbb"> (5) </span></li><br>
+                        <li class="li"><a href="#">August 2019</a><span style="color:#bbb"> (1) </span></li></br>    
+                    </p><br>
+                    <h5 style="color: #bbb">RECENT POSTS</h5>
+                    <p class="mt-4 "> 
+                        <li class="li">
+                            <img src="img/blog-State-of-AI-in-HR_1.jpg" style="width: 50px; height: 50;">
+                            <a href="#">State of AI in HR</a>
+                        </li><br>
+                        <li class="li"><a href="#">WordPress</a><span style="color:#bbb"> (5) </span></li><br>
+                        <li class="li"><a href="#">August 2019</a><span style="color:#bbb"> (1) </span></li></br>    
+                    </p><br>
+
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+        
+          
+        
+              
+</body>
+</html>
